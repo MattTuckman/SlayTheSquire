@@ -39,4 +39,3 @@ func create_instance() -> Resource:
 	instance.block = 0
 	return instance
 	
-

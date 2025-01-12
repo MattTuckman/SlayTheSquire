@@ -3,9 +3,6 @@ class_name CardReleasedState extends CardState
 var played: bool
 
 func enter():
-	card_ui.color.color = Color.MEDIUM_VIOLET_RED
-	card_ui.state.text = "RELEASED"
-	
 	played = false
 	
 	if card_ui.targets.is_empty(): 
@@ -13,4 +10,5 @@ func enter():
 		transition_requested.emit(self, CardState.State.BASE)
 	else:
 		played = true
-		print("play card for target(s)", card_ui.targets)
+		card_ui.play()
+		

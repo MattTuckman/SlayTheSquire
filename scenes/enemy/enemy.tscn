@@ -18,6 +18,7 @@ texture = ExtResource("1_dp2aq")
 shape = SubResource("RectangleShape2D_ujxmq")
 
 [node name="Arrow" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(14, 0)
 rotation = -1.5708
 texture = ExtResource("2_6sh3o")
@@ -25,3 +26,6 @@ texture = ExtResource("2_6sh3o")
 [node name="StatsUI" parent="." instance=ExtResource("3_3mnbs")]
 offset_top = 7.0
 offset_bottom = 23.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -19,16 +19,16 @@ func _process(_delta: float):
 		return
 	
 	area_2d.position = get_local_mouse_position()
-	var target := _get_relevant_pos(last_aim_target) if last_aim_target else get_local_mouse_position()
-	card_arc.points = _get_points(target)
+	card_arc.points = _get_points()
 	
 func _get_relevant_pos(area: Area2D) -> Vector2:
 	return area.position
 
-func _get_points(target: Vector2) -> Array:
+func _get_points() -> Array:
 	var points := []
 	var start := current_card.global_position
 	start.x += (current_card.size.x / 2)
+	var target := get_local_mouse_position()
 	var distance := (target - start)
 	
 	for i in ARC_POINTS:
