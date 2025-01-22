@@ -30,7 +30,6 @@ func _ready() -> void:
 	Events.card_aim_ended.connect(self._on_card_drag_or_aim_ended)
 	card_state_machine.init(self)
 
-
 func _input(event: InputEvent) -> void:
 	card_state_machine.on_input(event)
 
